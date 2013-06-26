@@ -1,0 +1,5 @@
+default[:confluence][:database][:host] = "localhost"
+default[:confluence][:database][:name] = "confluence"
+default[:confluence][:database][:user] = "confluence"
+default[:confluence][:database][:password] = "confluence"
+default[:confluence][:database][:type] = "postgresql"

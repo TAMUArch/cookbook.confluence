@@ -1,0 +1,35 @@
+#!/bin/sh -e
+# Confluence startup script
+#chkconfig: 2345 90 10
+#description: Confluence
+ 
+APP=confluence
+USER=<%= node[:confluence][:user] %>
+CATALINA_HOME=<%= node[:confluence][:directory] %>/confluence
+export JAVA_HOME=<%= node[:java][:java_home] %>
+ 
+case "$1" in
+  # Start command
+  start)
+    echo "Starting $APP"
+    /bin/su -m $USER -c "$CATALINA_HOME/bin/start-confluence.sh &> /dev/null"
+    ;;
+  # Stop command
+  stop)
+    echo "Stopping $APP"
+    /bin/su -m $USER -c "$CATALINA_HOME/bin/stop-confluence.sh &> /dev/null"
+    echo "$APP stopped successfully"
+    ;;
+   # Restart command
+   restart)
+        $0 stop
+        sleep 5
+        $0 start
+        ;;
+  *)
+    echo "Usage: /etc/init.d/$APP {start|restart|stop}"
+    exit 1
+    ;;
+esac
+ 
+exit 0
