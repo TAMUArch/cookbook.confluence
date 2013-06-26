@@ -1,23 +1,19 @@
 confluence Cookbook
 ===================
-TODO: Enter the cookbook description here.
-
-e.g.
-This cookbook makes your favorite breakfast sandwhich.
+This cookbook downloads, installs and does a very basic setup of Atlassian Confluence.
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
 
-e.g.
-#### packages
-- `toaster` - confluence needs toaster to brown your bagel.
+#### cookbooks 
+- `ark` - `https://github.com/opscode-cookbooks/ark.git` 
+- `java` - Official java cookbook from opscode
+- `database` - Official database cookbook from opscode
+- `postgresql` - Official database cookbook from opscode
 
 Attributes
 ----------
-TODO: List you cookbook attributes here.
 
-e.g.
 #### confluence::default
 <table>
   <tr>
@@ -27,19 +23,53 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['confluence']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['confluence']['user']</tt></td>
+    <td>String</td>
+    <td>user to run confluence as</td>
+    <td><tt>confluence</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['confluence']['group']</tt></td>
+    <td>String</td>
+    <td>group to run confluence as</td>
+    <td><tt>confluence</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['confluence']['directory']</tt></td>
+    <td>String</td>
+    <td>base directory to put confluence app and home dir in</td>
+    <td><tt>/usr/local/confluence</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['confluence']['home_directory']</tt></td>
+    <td>String</td>
+    <td>confluence home directory</td>
+    <td><tt>/usr/local/confluence/confluence_home</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['confluence']['version']</tt></td>
+    <td>String</td>
+    <td>confluence version to install</td>
+    <td><tt>5.1.3</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['confluence']['package']</tt></td>
+    <td>String</td>
+    <td>package to download</td>
+    <td><tt>atlassian-confluence-5.1.3.tar.gz</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['confluence']['download_url']</tt></td>
+    <td>String</td>
+    <td>default url to download package from</td>
+    <td><tt>http://www.atlassian.com/software/confluence/downloads/binary/</tt></td>
   </tr>
 </table>
 
 Usage
 -----
 #### confluence::default
-TODO: Write usage instructions for each cookbook.
 
-e.g.
 Just include `confluence` in your node's `run_list`:
 
 ```json
@@ -53,9 +83,6 @@ Just include `confluence` in your node's `run_list`:
 
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
 3. Write you change
@@ -65,4 +92,6 @@ e.g.
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+Authors: 
+
+* Jim Rosser
