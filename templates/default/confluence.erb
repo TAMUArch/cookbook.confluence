@@ -2,12 +2,12 @@
 # Confluence startup script
 #chkconfig: 2345 90 10
 #description: Confluence
- 
+
 APP=confluence
-USER=<%= node[:confluence][:user] %>
-CATALINA_HOME=<%= node[:confluence][:directory] %>/confluence
-export JAVA_HOME=<%= node[:java][:java_home] %>
- 
+USER=<%= node['confluence']['user'] %>
+CATALINA_HOME=<%= node['confluence']['directory'] %>/confluence
+export JAVA_HOME=<%= node['java']['java_home'] %>
+
 case "$1" in
   # Start command
   start)
@@ -31,5 +31,5 @@ case "$1" in
     exit 1
     ;;
 esac
- 
+
 exit 0

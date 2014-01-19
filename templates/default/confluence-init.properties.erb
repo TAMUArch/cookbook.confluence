@@ -1,6 +1,6 @@
 # This file is managed by Chef
 # Any modifications will be overwritten
 
-<% node[:confluence][:app_properties].each do |property, value| -%>
+<% node['confluence']['app_properties'].each do |property, value| -%>
 <%= "#{property.to_s.gsub /_/, '.'} = #{value}" %>
 <% end -%>
