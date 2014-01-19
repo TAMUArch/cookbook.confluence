@@ -1,6 +1,6 @@
 name             'confluence'
 maintainer       'Texas A&M'
-maintainer_email 'jarosser06@arch.tamu.edu'
+maintainer_email 'jarosser06@tamu.edu'
 license          'MIT'
 description      'Installs/Configures confluence'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))

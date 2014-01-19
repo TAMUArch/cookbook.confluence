@@ -92,6 +92,6 @@ Contributing
 
 License and Authors
 -------------------
-Authors: 
+Authors:
 
 * Jim Rosser
