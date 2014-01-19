@@ -6,5 +6,5 @@ cookbook "postgresql"
 group :integration do
   cookbook "confluence", :path => "."
   cookbook "apt"
-  cookbook "yum"
+  cookbook "yum-epel"
 end
