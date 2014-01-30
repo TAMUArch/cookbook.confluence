@@ -38,19 +38,19 @@ Attributes
     <td><tt>['confluence']['directory']</tt></td>
     <td>String</td>
     <td>base directory to put confluence app and home dir in</td>
-    <td><tt>/usr/local/confluence</tt></td>
+    <td><tt>/opt/confluence</tt></td>
   </tr>
   <tr>
     <td><tt>['confluence']['home_directory']</tt></td>
     <td>String</td>
     <td>confluence home directory</td>
-    <td><tt>/usr/local/confluence/confluence_home</tt></td>
+    <td><tt>/opt/confluence/confluence_home</tt></td>
   </tr>
   <tr>
     <td><tt>['confluence']['version']</tt></td>
     <td>String</td>
     <td>confluence version to install</td>
-    <td><tt>5.1.3</tt></td>
+    <td><tt>5.4.2</tt></td>
   </tr>
   <tr>
     <td><tt>['confluence']['package']</tt></td>
