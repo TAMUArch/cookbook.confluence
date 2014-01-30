@@ -31,5 +31,21 @@ directory node['confluence']['home_directory'] do
   mode 0754
 end
 
-include_recipe 'confluence::configure_application'
-include_recipe 'confluence::service'
+template ::File.join(node['confluence']['directory'], 'confluence/confluence/WEB-INF/classes/confluence-init.properties') do
+  action :create
+  owner node['confluence']['user']
+  group node['confluence']['group']
+  mode 0644
+  source 'confluence-init.properties.erb'
+  notifies :restart, 'service[confluence]', :delayed
+end
+
+template '/etc/init.d/confluence' do
+  action :create
+  mode 0744
+  source 'confluence.erb'
+end
+
+service 'confluence' do
+  action [ :enable, :start ]
+end

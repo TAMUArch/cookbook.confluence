@@ -1,5 +1,5 @@
 cookbook "java"
-cookbook "ark", :git => "https://github.com/opscode-cookbooks/ark.git"
+cookbook "ark"
 cookbook "database"
 cookbook "postgresql"
 

@@ -39,4 +39,4 @@ user node['confluence']['user'] do
 end
 
 include_recipe 'java'
-include_recipe 'confluence::deploy'
+include_recipe 'confluence::server'
