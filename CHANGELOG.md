@@ -1,5 +1,11 @@
 # CHANGELOG for confluence
 
+## 0.2.0:
+
+* restructured recipes and removed service and app config
+* upped default confluence version to 5.4.2
+* using strings instead of symbols for attributes
+
 ## 0.1.1:
 
 * changed db connection host to localhost
