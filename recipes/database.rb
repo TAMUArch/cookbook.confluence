@@ -4,10 +4,10 @@ when 'postgresql'
   include_recipe 'postgresql::server'
   include_recipe 'postgresql::ruby'
 
-  connection_info = { :host => 'localhost',
-                      :port => node['postgresql']['config']['port'],
-                      :username => 'postgres',
-                      :password => node['postgresql']['password']['postgres']
+  connection_info = { host: 'localhost',
+                      port: node['postgresql']['config']['port'],
+                      username: 'postgres',
+                      password: node['postgresql']['password']['postgres']
                     }
 
   postgresql_database node['confluence']['database']['name'] do
@@ -21,10 +21,9 @@ when 'postgresql'
     database_name node['confluence']['database']['name']
     password node['confluence']['database']['password']
     privileges [:all]
-    action [ :create, :grant ]
+    action [:create, :grant]
     connection connection_info
-  end 
-
-when "mysql"
+  end
+when 'mysql'
 ## TODO: Implement
 end

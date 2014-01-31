@@ -47,5 +47,5 @@ template '/etc/init.d/confluence' do
 end
 
 service 'confluence' do
-  action [ :enable, :start ]
+  action [:enable, :start]
 end
