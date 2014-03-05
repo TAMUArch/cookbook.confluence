@@ -44,19 +44,13 @@ Attributes
     <td><tt>['confluence']['home_directory']</tt></td>
     <td>String</td>
     <td>confluence home directory</td>
-    <td><tt>/opt/confluence/confluence_home</tt></td>
+    <td><tt>/var/confluence</tt></td>
   </tr>
   <tr>
     <td><tt>['confluence']['version']</tt></td>
     <td>String</td>
     <td>confluence version to install</td>
     <td><tt>5.4.2</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['confluence']['package']</tt></td>
-    <td>String</td>
-    <td>package to download</td>
-    <td><tt>atlassian-confluence-5.1.3.tar.gz</tt></td>
   </tr>
   <tr>
     <td><tt>['confluence']['download_url']</tt></td>
