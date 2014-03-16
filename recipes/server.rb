@@ -5,8 +5,10 @@ directory node['confluence']['directory'] do
   mode 0754
 end
 
+confluence_package = "atlassian-confluence-#{node['confluence']['version']}.tar.gz"
+
 ark 'confluence' do
-  url "#{node['confluence']['download_url']}/#{node['confluence']['package']}"
+  url "#{node['confluence']['download_url']}/#{confluence_package}"
   action :put
   path node['confluence']['directory']
   only_if { node['confluence']['installed_version'] != node['confluence']['version'] }
