@@ -23,10 +23,6 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
-node.override['java']['jdk_version'] = '7'
-node.override['java']['install_flavor'] = 'oracle'
-node.override['java']['oracle']['accept_oracle_download_terms'] = true
-
 group node['confluence']['group'] do
   action :create
 end
@@ -38,5 +34,4 @@ user node['confluence']['user'] do
   comment 'confluence application user'
 end
 
-include_recipe 'java'
 include_recipe 'confluence::server'

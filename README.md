@@ -2,12 +2,15 @@ confluence Cookbook
 ===================
 This cookbook downloads, installs and does a very basic setup of Atlassian Confluence.
 
+WARNING: This cookbook no longer includes java.  You need to include the java recipe
+in your runlist before calling the confluence default recipe otherwise confluence
+will fail to start.
+
 Requirements
 ------------
 
-#### cookbooks 
-- `ark` - `https://github.com/opscode-cookbooks/ark.git` 
-- `java` - Official java cookbook from opscode
+#### cookbooks
+- `ark` - `https://github.com/opscode-cookbooks/ark.git`
 - `database` - Official database cookbook from opscode
 - `postgresql` - Official database cookbook from opscode
 

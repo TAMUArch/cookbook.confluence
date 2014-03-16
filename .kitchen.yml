@@ -12,8 +12,13 @@ platforms:
 suites:
 - name: default
   run_list:
+  - recipe[java]
   - recipe[confluence]
-  attributes: {}
+  attributes: {
+    "java": {
+      "jdk_version": 7
+    }
+  }
 - name: confluence-db
   run_list:
   - recipe[confluence::database]
