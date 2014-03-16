@@ -1,5 +1,10 @@
 # CHANGELOG for confluence
 
+## 0.2.1:
+
+* remove java install
+* default confluence home now /var/confluence
+
 ## 0.2.0:
 
 * restructured recipes and removed service and app config
