@@ -38,9 +38,9 @@ Attributes
     <td><tt>confluence</tt></td>
   </tr>
   <tr>
-    <td><tt>['confluence']['directory']</tt></td>
+    <td><tt>['confluence']['install_dir']</tt></td>
     <td>String</td>
-    <td>base directory to put confluence app and home dir in</td>
+    <td>base directory to put confluence app</td>
     <td><tt>/opt/confluence</tt></td>
   </tr>
   <tr>

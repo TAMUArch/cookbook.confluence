@@ -19,6 +19,10 @@ suites:
       "jdk_version": 7
     }
   }
+- name: nginx_proxy
+  run_list:
+  - recipe[confluence::proxy]
+  attributes: {}
 - name: confluence-db
   run_list:
   - recipe[confluence::database]
