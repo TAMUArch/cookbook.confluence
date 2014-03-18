@@ -10,6 +10,10 @@ default['confluence']['app_properties']['confluence_home'] = node['confluence'][
 
 default['confluence']['use_proxy'] = false
 default['confluence']['proxy']['server'] = 'nginx'
+default['confluence']['proxy']['redirect_http'] = false
+default['confluence']['proxy']['use_ssl'] = false
+default['confluence']['proxy']['ssl_cert'] = nil
+default['confluence']['proxy']['ssl_key'] = nil
 default['confluence']['proxy']['name'] = node['fqdn']
-default['confluence']['proxy']['port'] = 443
+default['confluence']['proxy']['port'] = 80
 default['confluence']['proxy']['confluence_addr'] = 'localhost:8090'

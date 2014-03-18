@@ -1,11 +1,18 @@
+<% if @redirect_http -%>
 server {
   listen 80;
   rewrite ^(.*) https://$host$1 permanent;
 }
+<% end -%>
 
 server {
   listen <%= @port %>;
   server_name <%= @server_name %>;
+  <% if @use_ssl -%>
+  ssl on;
+  ssl_certificate <%= @ssl_cert %>;
+  ssl_certificate_key <%= @ssl_key %>;
+  <% end -%>
 
   location / {
     proxy_set_header X-Forwarded-Host $host;

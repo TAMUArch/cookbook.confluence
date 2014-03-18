@@ -61,6 +61,60 @@ Attributes
     <td>default url to download package from</td>
     <td><tt>http://www.atlassian.com/software/confluence/downloads/binary/</tt></td>
   </tr>
+  <tr>
+    <td><tt>['confluence']['use_proxy']</tt></td>
+    <td>Boolean</td>
+    <td>whether to use a proxy</td>
+    <td><tt>false</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['confluence']['proxy']['name']</tt></td>
+    <td>String</td>
+    <td>name on proxy</td>
+    <td><tt>node['fqdn']</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['confluence']['proxy']['port']</tt></td>
+    <td>Integer</td>
+    <td>proxy port</td>
+    <td><tt>80</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['confluence']['proxy']['confluence_addr']</tt></td>
+    <td>String</td>
+    <td>address of confluence for proxy</td>
+    <td><tt>localhost:8090</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['confluence']['proxy']['server']</tt></td>
+    <td>String</td>
+    <td>proxy server to use</td>
+    <td><tt>nginx</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['confluence']['proxy']['redirect_http']</tt></td>
+    <td>Boolean</td>
+    <td>whether to redirect boolean</td>
+    <td><tt>false</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['confluence']['proxy']['use_ssl']</tt></td>
+    <td>Boolean</td>
+    <td>whether to use ssl</td>
+    <td><tt>false</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['confluence']['proxy']['ssl_cert']</tt></td>
+    <td>String</td>
+    <td>path to ssl cert</td>
+    <td><tt>nil</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['confluence']['proxy']['ssl_key']</tt></td>
+    <td>String</td>
+    <td>path to ssl key</td>
+    <td><tt>nil</tt></td>
+  </tr>
 </table>
 
 Usage
