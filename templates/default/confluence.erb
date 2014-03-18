@@ -5,7 +5,7 @@
 
 APP=confluence
 USER=<%= node['confluence']['user'] %>
-CATALINA_HOME=<%= node['confluence']['directory'] %>/confluence
+CATALINA_HOME=<%= node['confluence']['install_dir'] %>/confluence
 export JAVA_HOME=<%= node['java']['java_home'] %>
 
 case "$1" in

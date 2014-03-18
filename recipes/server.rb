@@ -1,16 +1,9 @@
-directory node['confluence']['directory'] do
-  action :create
-  owner node['confluence']['user']
-  group node['confluence']['group']
-  mode 0754
-end
-
 confluence_package = "atlassian-confluence-#{node['confluence']['version']}.tar.gz"
 
 ark 'confluence' do
   url "#{node['confluence']['download_url']}/#{confluence_package}"
   action :put
-  path node['confluence']['directory']
+  path node['confluence']['install_dir']
   only_if { node['confluence']['installed_version'] != node['confluence']['version'] }
   owner node['confluence']['user']
   group node['confluence']['group']
@@ -33,13 +26,19 @@ directory node['confluence']['home_directory'] do
   mode 0754
 end
 
-template ::File.join(node['confluence']['directory'], 'confluence/confluence/WEB-INF/classes/confluence-init.properties') do
-  action :create
-  owner node['confluence']['user']
-  group node['confluence']['group']
-  mode 0644
-  source 'confluence-init.properties.erb'
-  notifies :restart, 'service[confluence]', :delayed
+# Override some configs
+{
+  'server.xml.erb' => 'conf/server.xml',
+  'confluence-init.properties.erb' => 'confluence/WEB-INF/classes/confluence-init.properties'
+}.each do |src, dest|
+  template ::File.join(node['confluence']['install_dir'], 'confluence', dest) do
+    action :create
+    owner node['confluence']['user']
+    group node['confluence']['group']
+    mode 0644
+    source src
+    notifies :restart, 'service[confluence]', :delayed
+  end
 end
 
 template '/etc/init.d/confluence' do
