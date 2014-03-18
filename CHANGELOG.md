@@ -1,5 +1,11 @@
 # CHANGELOG for confluence
 
+## 0.2.2:
+
+* support for using a proxy with confluence
+* nginx proxy recipe
+* changed the confluence install directory from /opt/confluence/confluence to /opt/confluence
+
 ## 0.2.1:
 
 * remove java install
