@@ -1,5 +1,9 @@
 # CHANGELOG for confluence
 
+## 0.3.0:
+
+* upped confluence version to 5.5.4
+
 ## 0.2.2:
 
 * support for using a proxy with confluence
