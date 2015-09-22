@@ -1,5 +1,9 @@
 # CHANGELOG for confluence
 
+## 0.3.1:
+
+* up confluence version to 5.8.10
+
 ## 0.3.0:
 
 * upped confluence version to 5.5.4
