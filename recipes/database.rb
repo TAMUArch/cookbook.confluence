@@ -1,8 +1,7 @@
-include_recipe 'database'
 case node['confluence']['database']['type']
 when 'postgresql'
-  include_recipe 'postgresql::server'
   include_recipe 'postgresql::ruby'
+  include_recipe 'postgresql::server'
 
   connection_info = { host: 'localhost',
                       port: node['postgresql']['config']['port'],
