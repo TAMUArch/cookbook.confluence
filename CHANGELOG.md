@@ -1,5 +1,9 @@
 # CHANGELOG for confluence
 
+## 0.3.2
+
+* up confluence version to 5.8.14, remove unnecessary database recipe
+
 ## 0.3.1:
 
 * up confluence version to 5.8.10
