@@ -11,7 +11,6 @@ Requirements
 
 #### cookbooks
 - `ark` - `https://github.com/opscode-cookbooks/ark.git`
-- `database` - Official database cookbook from opscode
 - `postgresql` - Official database cookbook from opscode
 
 Attributes
@@ -40,8 +39,8 @@ Attributes
   <tr>
     <td><tt>['confluence']['install_dir']</tt></td>
     <td>String</td>
-    <td>base directory to put confluence app</td>
-    <td><tt>/opt/confluence</tt></td>
+    <td>base directory to put confluence app directory</td>
+    <td><tt>/opt</tt></td>
   </tr>
   <tr>
     <td><tt>['confluence']['home_directory']</tt></td>
@@ -53,7 +52,7 @@ Attributes
     <td><tt>['confluence']['version']</tt></td>
     <td>String</td>
     <td>confluence version to install</td>
-    <td><tt>5.4.2</tt></td>
+    <td><tt>5.8.14</tt></td>
   </tr>
   <tr>
     <td><tt>['confluence']['download_url']</tt></td>
@@ -62,7 +61,7 @@ Attributes
     <td><tt>http://www.atlassian.com/software/confluence/downloads/binary/</tt></td>
   </tr>
   <tr>
-    <td><tt>['confluence']['use_proxy']</tt></td>
+    <td><tt>['confluence']['https_proxy']</tt></td>
     <td>Boolean</td>
     <td>whether to use a proxy</td>
     <td><tt>false</tt></td>
@@ -80,40 +79,10 @@ Attributes
     <td><tt>80</tt></td>
   </tr>
   <tr>
-    <td><tt>['confluence']['proxy']['confluence_addr']</tt></td>
+    <td><tt>['confluence']['proxy']['scheme']</tt></td>
     <td>String</td>
-    <td>address of confluence for proxy</td>
-    <td><tt>localhost:8090</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['confluence']['proxy']['server']</tt></td>
-    <td>String</td>
-    <td>proxy server to use</td>
-    <td><tt>nginx</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['confluence']['proxy']['redirect_http']</tt></td>
-    <td>Boolean</td>
-    <td>whether to redirect boolean</td>
-    <td><tt>false</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['confluence']['proxy']['use_ssl']</tt></td>
-    <td>Boolean</td>
-    <td>whether to use ssl</td>
-    <td><tt>false</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['confluence']['proxy']['ssl_cert']</tt></td>
-    <td>String</td>
-    <td>path to ssl cert</td>
-    <td><tt>nil</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['confluence']['proxy']['ssl_key']</tt></td>
-    <td>String</td>
-    <td>path to ssl key</td>
-    <td><tt>nil</tt></td>
+    <td>scheme for proxy</td>
+    <td><tt>https</tt></td>
   </tr>
 </table>
 
@@ -146,3 +115,4 @@ License and Authors
 Authors:
 
 * Jim Rosser
+* Victoria Blessing

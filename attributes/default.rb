@@ -8,12 +8,9 @@ default['confluence']['download_url'] = 'http://www.atlassian.com/software/confl
 
 default['confluence']['app_properties']['confluence_home'] = node['confluence']['home_directory']
 
-default['confluence']['use_proxy'] = false
-default['confluence']['proxy']['server'] = 'nginx'
-default['confluence']['proxy']['redirect_http'] = false
-default['confluence']['proxy']['use_ssl'] = false
-default['confluence']['proxy']['ssl_cert'] = nil
-default['confluence']['proxy']['ssl_key'] = nil
+# To enable ssl forwarding from a loadbalancer set https_proxy to
+# true and update the proxy name.
+default['confluence']['https_proxy'] = false
 default['confluence']['proxy']['name'] = node['fqdn']
-default['confluence']['proxy']['port'] = 80
-default['confluence']['proxy']['confluence_addr'] = 'localhost:8090'
+default['confluence']['proxy']['port'] = 443
+default['confluence']['proxy']['scheme'] = 'https'
