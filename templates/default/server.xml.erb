@@ -4,7 +4,7 @@
                 maxThreads="200" minSpareThreads="10"
                 enableLookups="false" acceptCount="10" debug="0" URIEncoding="UTF-8"
                 protocol="org.apache.coyote.http11.Http11NioProtocol"
-                <% if node['confluence']['use_proxy'] %>
+                <% if node['confluence']['https_proxy'] %>
                   proxyName="<%= node['confluence']['proxy']['name'] %>" proxyPort="<%= node['confluence']['proxy']['port'] %>" scheme="<%= node['confluence']['proxy']['scheme'] %>"
                 <% end %>
                 />
