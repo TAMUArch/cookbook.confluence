@@ -1,5 +1,11 @@
 # CHANGELOG for confluence
 
+## 1.0.0
+
+* reverse proxy refactor
+* update readme
+* clean up
+
 ## 0.3.2
 
 * up confluence version to 5.8.14, remove unnecessary database recipe
